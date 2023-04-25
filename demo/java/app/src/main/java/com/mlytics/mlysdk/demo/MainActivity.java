@@ -38,9 +38,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ExoPlayer.Builder builder = MLYExoPlayer.INSTANCE.builder(playerView);
+        ExoPlayer player = MLYExoPlayer.Companion.buildLowLatencyPlayer(playerView,3000);
 
-        ExoPlayer player = builder.build();
         playerView.setPlayer(player);
 
         player.setMediaItem(MediaItem.fromUri(url));

@@ -31,9 +31,8 @@ class MainActivity : AppCompatActivity() {
             options.client.id = clientId
         }
 
-        var builder = MLYExoPlayer.builder(playerView!!)
+        var player = MLYExoPlayer.buildLowLatencyPlayer(playerView!!)
 
-        val player = builder.build()
         playerView?.player = player
         player.setMediaItem(MediaItem.fromUri(url))
 
