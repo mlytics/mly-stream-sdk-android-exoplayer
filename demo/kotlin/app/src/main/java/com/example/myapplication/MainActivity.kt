@@ -28,13 +28,14 @@ class MainActivity : AppCompatActivity() {
 
 
         MLYDriver.initialize { options ->
-            options.client.id = clientId
+            options.client.id = "cgsangrvdp42j9d4c4v0"
+            options.debug = true
         }
 
-        var player = MLYExoPlayer.buildLowLatencyPlayer(playerView!!)
+        var player = MLYExoPlayer.buildPlayer(playerView!!,2000)
 
         playerView?.player = player
-        player.setMediaItem(MediaItem.fromUri(url))
+        player.setMediaItem(MediaItem.fromUri("https://lowlatencydemo.mlytics.co/app/stream/abr.m3u8"))
 
         playButton = findViewById(R.id.playButton)
         playButton?.setOnClickListener {
