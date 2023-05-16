@@ -12,9 +12,6 @@ class MainActivity : AppCompatActivity() {
     private var playerView: StyledPlayerView? = null
     private var playButton: AppCompatButton? = null
 
-    val clientId = "cegh8d9j11u91ba1u600"
-    val url = "https://vsp-stream.s3.ap-northeast-1.amazonaws.com/HLS/raw/SpaceX.m3u8"
-
     override fun onDestroy() {
         super.onDestroy()
         MLYDriver.deactivate()
@@ -27,15 +24,14 @@ class MainActivity : AppCompatActivity() {
         playerView = findViewById<StyledPlayerView>(R.id.player_view)
 
 
-        MLYDriver.initialize { options ->
-            options.client.id = "cgsangrvdp42j9d4c4v0"
-            options.debug = true
+        MLYDriver.initialize(this.applicationContext) { options ->
+            options.client.id = "cegh8d9j11u91ba1u600"
         }
 
-        var player = MLYExoPlayer.buildPlayer(playerView!!,2000)
+        var player = MLYExoPlayer.build(playerView!!)
 
         playerView?.player = player
-        player.setMediaItem(MediaItem.fromUri("https://lowlatencydemo.mlytics.co/app/stream/abr.m3u8"))
+        player.setMediaItem(MediaItem.fromUri("https://vsp-stream.s3.ap-northeast-1.amazonaws.com/HLS/raw/SpaceX.m3u8"))
 
         playButton = findViewById(R.id.playButton)
         playButton?.setOnClickListener {
