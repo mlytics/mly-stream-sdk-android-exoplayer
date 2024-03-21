@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.ui.StyledPlayerView
+import com.mlytics.exoplayer.MLYExoPlayer
 import com.mlytics.mlysdk.driver.MLYDriver
-import com.mlytics.mlysdk.driver.pheripheral.player.MLYExoPlayer
 
 class MainActivity : AppCompatActivity() {
     private var playerView: StyledPlayerView? = null
@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         playerView = findViewById<StyledPlayerView>(R.id.player_view)
-
 
         MLYDriver.initialize(this.applicationContext) { options ->
             options.client.id = "cegh8d9j11u91ba1u600"
