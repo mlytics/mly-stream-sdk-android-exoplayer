@@ -42,14 +42,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation files('libs/mlysdk-debug.aar')
-    implementation files('libs/exoplayer-debug.aar')
-
+    implementation 'io.github.vip-test:mlysdk:0.0.2'
+    implementation 'io.github.vip-test:exoplayer:0.0.1'
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
     implementation 'io.github.centrifugal:centrifuge-java:0.2.7'
     implementation 'org.webrtc:google-webrtc:1.0.32006'
     implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
     implementation 'com.mux.stats.sdk.muxstats:MuxExoPlayer_r2_18_1:3.0.1'
+
+
 
 }
 configurations.all {
