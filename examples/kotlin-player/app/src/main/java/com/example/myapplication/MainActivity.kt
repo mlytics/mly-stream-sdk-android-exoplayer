@@ -28,9 +28,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         var player = MLYExoPlayer.build(playerView!!)
-
         playerView?.player = player
-        player.setMediaItem(MediaItem.fromUri("https://vsp-stream.s3.ap-northeast-1.amazonaws.com/HLS/raw/SpaceX.m3u8"))
+
+        val videoUrlString = "https://vsp-stream.s3.ap-northeast-1.amazonaws.com/HLS/raw/SpaceX.m3u8"
+
+        val subtitleUrlString = "https://sit-ome.p2sp.gordon.sh/misc/sub/test_zh-tw.vtt"
+        val subtitleConfiguration = MediaItem.SubtitleConfiguration.Builder(Uri.parse(subtitleUrlString))
+            .setMimeType("text/vtt")
+            .setLanguage("zh-TW")
+            .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+            .build()
+
+        val mediaItem = MediaItem.Builder()
+            .setUri(Uri.parse(videoUrlString))
+            .setSubtitleConfigurations(listOf(subtitleConfiguration))
+            .build()
+
+        MLYExoPlayer.currentPlayer?.initMediaInfo(videoUrlString)
+
+        player.setMediaItem(mediaItem)
 
         playButton = findViewById(R.id.playButton)
         playButton?.setOnClickListener {
