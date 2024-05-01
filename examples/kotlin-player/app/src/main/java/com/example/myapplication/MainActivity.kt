@@ -3,6 +3,8 @@ package com.example.myapplication
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.KeyEvent
 import androidx.appcompat.widget.AppCompatButton
 import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.ExoPlayer
@@ -47,6 +49,30 @@ class MainActivity : AppCompatActivity() {
         playButton?.setOnClickListener {
             playVideo()
         }
+    }
+
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        if (event.action == KeyEvent.ACTION_DOWN) {
+            when (event.keyCode) {
+                KeyEvent.KEYCODE_DPAD_RIGHT -> {
+                    Log.d("MainActivity", "DPAD RIGHT dispatched")
+                    player?.let {
+                        val position = it.currentPosition + 10000
+                        it.seekTo(position)
+                    }
+                    return true
+                }
+                KeyEvent.KEYCODE_DPAD_LEFT -> {
+                    Log.d("MainActivity", "DPAD LEFT dispatched")
+                    player?.let {
+                        val position = it.currentPosition - 10000
+                        it.seekTo(position)
+                    }
+                    return true
+                }
+            }
+        }
+        return super.dispatchKeyEvent(event)
     }
 
     private fun playVideo() {
