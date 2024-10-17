@@ -42,11 +42,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation 'io.github.vip-test:mlysdk:0.0.3'
+    implementation 'io.github.vip-test:mlysdk:0.0.4'
     implementation 'io.github.vip-test:exoplayer:0.0.6'
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
     implementation 'io.github.centrifugal:centrifuge-java:0.2.7'
-    implementation 'org.webrtc:google-webrtc:1.0.32006'
     implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
     implementation 'com.mux.stats.sdk.muxstats:MuxExoPlayer_r2_19_1:3.4.7'
 
