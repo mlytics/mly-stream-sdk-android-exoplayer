@@ -9,9 +9,9 @@ import android.view.View;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.ui.StyledPlayerView;
+import com.mlytics.exoplayer.MLYExoPlayer;
 import com.mlytics.mlysdk.driver.MLYDriver;
 import com.mlytics.mlysdk.driver.MLYDriverOptions;
-import com.mlytics.mlysdk.driver.pheripheral.player.MLYExoPlayer;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

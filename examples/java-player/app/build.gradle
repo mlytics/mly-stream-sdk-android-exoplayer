@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.mlytics.mlysdk.demo'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.mlytics.mlysdk.demo"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -29,15 +29,21 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation 'io.github.vip-test:vip-test:0.1.29'
+
+    implementation 'com.mlytics.sdk.p2sp:mlysdk:0.2.0'
+    implementation 'com.mlytics.sdk.p2sp:exoplayer:0.0.2'
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+    implementation 'io.github.centrifugal:centrifuge-java:0.2.7'
+    implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
+    implementation 'com.mux.stats.sdk.muxstats:MuxExoPlayer_r2_19_1:3.4.7'
 }
+
 configurations.all {
     exclude group: "com.google.protobuf", module: "protobuf-javalite"
 }
